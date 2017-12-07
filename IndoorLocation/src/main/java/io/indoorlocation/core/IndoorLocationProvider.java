@@ -37,4 +37,28 @@ public abstract class IndoorLocationProvider {
 
     public abstract boolean isStarted();
 
+    public void dispatchOnProviderStarted() {
+        for (IndoorLocationProviderListener listener : listeners) {
+            listener.onProviderStarted();
+        }
+    }
+
+    public void dispatchOnProviderStopped() {
+        for (IndoorLocationProviderListener listener : listeners) {
+            listener.onProviderStopped();
+        }
+    }
+
+    public void dispatchOnProviderError(Error error) {
+        for (IndoorLocationProviderListener listener : listeners) {
+            listener.onProviderError(error);
+        }
+    }
+
+    public void dispatchIndoorLocationChange(IndoorLocation indoorLocation) {
+        for (IndoorLocationProviderListener listener : listeners) {
+            listener.onIndoorLocationChange(indoorLocation);
+        }
+    }
+
 }
