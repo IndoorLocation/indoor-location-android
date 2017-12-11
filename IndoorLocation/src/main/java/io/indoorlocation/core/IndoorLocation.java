@@ -4,18 +4,18 @@ import android.location.Location;
 
 public class IndoorLocation extends Location {
 
-    private Integer floor;
+    private Double floor;
 
-    public IndoorLocation(Location location, Integer floor) {
+    public IndoorLocation(Location location, Double floor) {
         super(location);
         this.floor = floor;
     }
 
-    public Integer getFloor() {
+    public Double getFloor() {
         return floor;
     }
 
-    public void setFloor(Integer floor) {
+    public void setFloor(Double floor) {
         this.floor = floor;
     }
 
