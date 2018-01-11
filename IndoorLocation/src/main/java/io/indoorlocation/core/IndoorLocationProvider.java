@@ -5,11 +5,9 @@ import java.util.List;
 
 public abstract class IndoorLocationProvider {
 
-    private String name;
     private List<IndoorLocationProviderListener> listeners;
 
-    public IndoorLocationProvider(String name) {
-        this.name = name;
+    public IndoorLocationProvider() {
         listeners = new ArrayList<>();
     }
 
@@ -26,7 +24,7 @@ public abstract class IndoorLocationProvider {
     }
 
     public String getName() {
-        return name;
+        return this.getClass().getSimpleName();
     }
 
     public abstract boolean supportsFloor();
