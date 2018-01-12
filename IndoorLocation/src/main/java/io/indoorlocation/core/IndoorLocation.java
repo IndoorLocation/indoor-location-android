@@ -11,6 +11,14 @@ public class IndoorLocation extends Location {
         this.floor = floor;
     }
 
+    public IndoorLocation(String provider, double latitude, double longitude, Double floor, long timeStamp) {
+        super(provider);
+        this.setLatitude(latitude);
+        this.setLongitude(longitude);
+        this.setTime(timeStamp);
+        this.floor = floor;
+    }
+
     public Double getFloor() {
         return floor;
     }
