@@ -1,16 +1,32 @@
 # IndoorLocation core classes for Android
 
-Here are the main classes to build IndoorLocation providers for Android.
+## Core classes
 
-<!-- Being IL -->
+### IndoorLocation
 
-## IndoorLocation Open-Source Framework
+IndoorLocation extends the standard android.location.Location class to add support for floor. Floor is a Double and can be null.
 
-Indoor Location is an open-source framework that aims at simplifying the connection of any indoor positioning technology to the Mapwize Indoor Maps.
+Two constructors are defined:
 
-The entire framework is still in beta and lots of components are still missing. Please feel free to contact us at <indoorlocation@mapwize.io> to know more about the roadmap and influence it. We are always looking for feedback.
+```
+public IndoorLocation(Location location, Double floor)
 
-If you are an Indoor Location Provider and would like to connect to Mapwize, please get in touch at <indoorlocation@mapwize.io>.
+public IndoorLocation(String provider, double latitude, double longitude, Double floor, long timeStamp)
 
-<!-- End IL -->
- 
+```
+
+### IndoorLocationProvider
+
+Abstract class to serve as a base for any provider. A provider is basically a class that emits IndoorLocations.
+
+### IndoorLocationProviderListener
+
+Interface that you must implement to receive events from IndoorLocation providers.
+
+## Support
+
+For any support with this provider, please do not hesitate to contact [support@mapwize.io](mailto:support@mapwize.io)
+
+## License
+
+MIT
