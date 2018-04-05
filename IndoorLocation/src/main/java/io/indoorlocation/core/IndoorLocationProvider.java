@@ -58,10 +58,10 @@ public abstract class IndoorLocationProvider {
         for (IndoorLocationProviderListener listener : listeners) {
             listener.onIndoorLocationChange(indoorLocation);
         }
-        saveLastLocation(indoorLocation);
+        setLastLocation(indoorLocation);
     }
 
-    private void saveLastLocation(IndoorLocation indoorLocation) {
+    private void setLastLocation(IndoorLocation indoorLocation) {
         lastIndoorLocation = indoorLocation;
     }
 
