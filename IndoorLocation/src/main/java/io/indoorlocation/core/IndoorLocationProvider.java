@@ -6,6 +6,7 @@ import java.util.List;
 public abstract class IndoorLocationProvider {
 
     private List<IndoorLocationProviderListener> listeners;
+    private IndoorLocation lastIndoorLocation;
 
     public IndoorLocationProvider() {
         listeners = new ArrayList<>();
@@ -57,6 +58,15 @@ public abstract class IndoorLocationProvider {
         for (IndoorLocationProviderListener listener : listeners) {
             listener.onIndoorLocationChange(indoorLocation);
         }
+        setLastLocation(indoorLocation);
+    }
+
+    private void setLastLocation(IndoorLocation indoorLocation) {
+        lastIndoorLocation = indoorLocation;
+    }
+
+    public IndoorLocation getLastLocation() {
+        return lastIndoorLocation;
     }
 
 }
