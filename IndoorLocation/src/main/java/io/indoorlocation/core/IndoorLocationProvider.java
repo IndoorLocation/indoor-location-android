@@ -55,10 +55,10 @@ public abstract class IndoorLocationProvider {
     }
 
     public void dispatchIndoorLocationChange(IndoorLocation indoorLocation) {
+        setLastLocation(indoorLocation);
         for (IndoorLocationProviderListener listener : listeners) {
             listener.onIndoorLocationChange(indoorLocation);
         }
-        setLastLocation(indoorLocation);
     }
 
     private void setLastLocation(IndoorLocation indoorLocation) {
